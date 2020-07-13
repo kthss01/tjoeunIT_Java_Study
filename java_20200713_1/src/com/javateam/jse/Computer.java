@@ -95,6 +95,11 @@ public class Computer { // (O)
 		
 	}
 	
+	// 가변인자라고 함 오버로딩할 때 조심해야함
+	public void print(String... str) {
+		
+	}
+	
 	// 정적 멤버 메서드
 	// 프로그램 종료 때까지 메모리(RAM)에 (고)정적인 주소를 가지는(static) 메서드
 	// ex) 경복궁(문화재)
