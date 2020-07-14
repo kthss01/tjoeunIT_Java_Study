@@ -130,6 +130,8 @@ public class Computer { // (O)
 //		mainBody = "K사"; // (O)
 		Computer.mainBody = "K사";
 		
-		System.out.println(com1.keyboard); // null 출력됨
+//		System.out.println(com1.keyboard); // null 출력됨
+		System.out.println(com1);
+		System.out.println(com2);
 	}
 }
