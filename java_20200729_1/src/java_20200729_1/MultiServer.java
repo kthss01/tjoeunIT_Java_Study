@@ -12,9 +12,9 @@ public class MultiServer {
 	 */
 	
 	ServerSocket sc;
-	Vector<Thread> clients; // 문-1
+	Vector<ClientThread> clients; // 문-1
 	ClientThread client;
-	Iterator<Thread> clientsEn; // 문-2
+	Iterator<ClientThread> clientsEn; // 문-2
 	
 	// 메인 메소드
 	public static void main(String[] args) {
@@ -33,7 +33,7 @@ public class MultiServer {
 	public MultiServer() throws Exception {
 		
 		sc = new ServerSocket(7777);
-		clients = new Vector<Thread>(); // 문-1
+		clients = new Vector<>(); // 문-1
 	}
 	
 	public void welcomeclients() throws Exception {
@@ -53,7 +53,7 @@ public class MultiServer {
 	// Hint) 문-1의 Vector의 요소와 관련이 있습니다.
 	public synchronized void addClient(Thread clientThread) {
 		
-		clients.add(clientThread); //
+		clients.add((ClientThread)clientThread); //
 		System.out.println("current clients : " + clients.size());
 	}
 
@@ -73,7 +73,7 @@ public class MultiServer {
 	}
 	
 	// 메시지 전송(멀티 에코) 호출
-	public void braodClientList() {
+	public void broadClientList() {
 		
 		String re = "";
 		

@@ -32,7 +32,7 @@ public class ClientThread extends Thread {
 
 					nickName = userMsg.substring(3);
 					server.broadCast("002 new Client[" + nickName + "]님 입장");
-					server.braodClientList();
+					server.broadClientList();
 				} else if (userMsg.startsWith("002")) { // Chatting
 
 					server.broadCast("002 " + userMsg.substring(3));

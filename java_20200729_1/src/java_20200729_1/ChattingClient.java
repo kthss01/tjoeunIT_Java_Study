@@ -10,6 +10,8 @@ import javax.swing.JOptionPane;
 
 public class ChattingClient extends Frame implements ActionListener {
 
+	private static final long serialVersionUID = 1L;
+	
 	Thread listenThread;
 	Socket socket;
 	BufferedReader reader;
@@ -35,9 +37,9 @@ public class ChattingClient extends Frame implements ActionListener {
 		p2 = new Panel();
 
 		ta = new TextArea();
-		tf = new TextField();
-
+		tf = new TextField(); // 기본적으로 0 파라미터로 넣어줘도 됨
 		tf.setColumns(50); // 채팅 입력창 크기 증가
+
 		tf.addActionListener(this);
 
 		list = new List();
@@ -174,6 +176,7 @@ public class ChattingClient extends Frame implements ActionListener {
 
 		try {
 			cl = new ChattingClient(userName, HostIP, HostPort);
+//			cl = new ChattingClient(args[0], args[1], args[2]);
 
 			cl.setBounds(200, 200, 600, 600); // 사각형 영역의 경계를 크기만큼 지정함
 			cl.setVisible(true);
